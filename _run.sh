@@ -1,0 +1,1 @@
+docker build -t phnmnl/rtest . && docker run -v /vol/phenomenal/github-phnmnl/docker-pwiz:/pwiz -v /vol/phenomenal/github-phnmnl/docker-rtest:/rtest -ti phnmnl/rtest /show_chromatogram.r /pwiz/neg-MM8_1-A,1_01_376.mzML /rtest/output.png
