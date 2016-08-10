@@ -1,4 +1,4 @@
-FROM bioconductor/release_metabolomics
+FROM sneumann/devel_metabolomics
 
 MAINTAINER Kristian Peters <kpeters@ipb-halle.de>
 
