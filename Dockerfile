@@ -1,4 +1,4 @@
-FROM sneumann/devel_metabolomics
+FROM docker-registry.phenomenal-h2020.eu/phnmnl/ipo
 
 MAINTAINER Kristian Peters <kpeters@ipb-halle.de>
 
