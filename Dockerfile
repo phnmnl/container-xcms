@@ -1,7 +1,7 @@
 FROM container-registry.phenomenal-h2020.eu/phnmnl/ipo
 
 LABEL software=xcms
-LABEL software.version=1.0.0
+LABEL software.version=1.50.1
 LABEL version=0.1
 
 LABEL Description="XCMS: Framework for processing and visualization of chromatographically separated and single-spectra mass spectral data."

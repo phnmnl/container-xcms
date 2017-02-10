@@ -1,1 +1,2 @@
-test -f /usr/local/bin/runIPO.R
+R -e "library(xcms)"
+
