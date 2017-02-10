@@ -1,5 +1,1 @@
-#test -f 
-#test -x 
-#which 
 test -f /usr/local/bin/runIPO.R
-
