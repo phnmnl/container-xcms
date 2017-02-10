@@ -7,8 +7,8 @@ LABEL version=0.1
 LABEL Description="XCMS: Framework for processing and visualization of chromatographically separated and single-spectra mass spectral data."
 
 # Add scripts folder to container
-#ADD show_chromatogram.r /usr/local/bin/show_chromatogram.r
-#RUN chmod 755 /show_chromatogram.r
+ADD show_chromatogram.r /usr/local/bin/show_chromatogram.r
+RUN chmod +x /usr/local/bin/show_chromatogram.r
 
 # Define Entry point script
 #ENTRYPOINT ["Rscript"]
