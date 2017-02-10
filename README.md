@@ -1,7 +1,7 @@
 ![Logo](XCMS_logo.png)
 
 # XCMS
-Version: 1.0.0
+Version: 1.50.1
 
 ## Short Description
 
