@@ -8,7 +8,7 @@ LABEL version=0.1
 LABEL Description="XCMS: Framework for processing and visualization of chromatographically separated and single-spectra mass spectral data."
 
 # Install packages for compilation
-RUN apt-get -y --no-recommends install make gcc gfortran g++ libnetcdf-dev
+RUN apt-get -y --no-install-recommends install make gcc gfortran g++ libnetcdf-dev
 
 # Install XCMS
 RUN R -e 'source("https://bioconductor.org/biocLite.R"); biocLite("xcms")'
