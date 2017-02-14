@@ -14,11 +14,15 @@ RUN apt-get -y --no-install-recommends install make gcc gfortran g++ libnetcdf-d
 RUN R -e 'source("https://bioconductor.org/biocLite.R"); biocLite("xcms")'
 
 # De-install not needed packages
-RUN apt-get remove --purge --auto-remove make gcc gfortran g++
+RUN apt-get -y --purge --auto-remove remove make gcc gfortran g++
+
+# Clean-up
+RUN apt-get -y clean && apt-get -y autoremove && rm -rf /var/lib/{cache,log}/ /tmp/* /var/tmp/*
 
 # Add scripts folder to container
 ADD show_chromatogram.r /usr/local/bin/show_chromatogram.r
 RUN chmod +x /usr/local/bin/show_chromatogram.r
 
 # Define Entry point script
-#ENTRYPOINT ["Rscript"]
+#ENTRYPOINT [ "Rscript" ]
+#CMD [ "/usr/local/bin/show_chromatogram.r" ]
