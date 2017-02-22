@@ -1,8 +1,5 @@
 #!/usr/bin/env Rscript
 
-#source("http://bioconductor.org/biocLite.R")
-#biocLite("xcms", dep=T, ask=F)
-
 ## Some code taken and adapted from: https://github.com/nturaga/bioc-galaxy-integration/
 
 # Setup R error handling to go to stderr
@@ -12,7 +9,6 @@ options(show.error.messages=F, error=function(){cat(geterrmessage(),file=stderr(
 loc <- Sys.setlocale("LC_MESSAGES", "en_US.UTF-8")
 
 # Import library
-install.packages("getopt")
 library("getopt")
 options(stringAsfactors = FALSE, useFancyQuotes = FALSE)
 
