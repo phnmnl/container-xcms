@@ -26,6 +26,9 @@ ADD show_chromatogram.r /usr/local/bin/show_chromatogram.r
 ADD test_output.r /usr/local/bin/test_output.r
 RUN chmod +x /usr/local/bin/*.r
 
+# Add testing to container
+ADD runTest1.sh /usr/local/bin/runTest1.sh
+
 # Define Entry point script
 #ENTRYPOINT [ "Rscript" ]
 #CMD [ "/usr/local/bin/show_chromatogram.r" ]
