@@ -9,7 +9,7 @@ options(show.error.messages=F, error=function(){cat(geterrmessage(),file=stderr(
 loc <- Sys.setlocale("LC_MESSAGES", "en_US.UTF-8")
 
 # Import library
-library("getopt")
+#library(getopt)
 options(stringAsfactors = FALSE, useFancyQuotes = FALSE)
 
 # Take in trailing command line arguments
