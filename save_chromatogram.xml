@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--Proposed Tool Section: [Statistics]-->
+<tool id="save_chromatogram" name="save_chromatogram" version="1.1">
+<!--
+  <requirements>
+    <container type="docker">phnmnl/xcms</container>
+  </requirements>
+-->
+  <description>Saves the chromatogram of a single mzML file.</description>
+  <command><![CDATA[
+    /usr/local/bin/save_chromatogram.r $infile $outfile 2>&1
+  ]]></command>
+  <inputs>
+    <param name="infile" type="data" format="mzml" value="&lt;class 'CTDopts.CTDopts._Null'&gt;" optional="False" label="Input mzML file." />
+  </inputs>
+  <outputs>
+    <data name="outfile" format="csv"/>
+  </outputs>
+  <help>Saves the chromatogram RT/TIC out of an mzML file in CSV format.</help>
+</tool>
