@@ -20,9 +20,14 @@ RUN apt-get -y --purge --auto-remove remove make gcc gfortran g++
 # Clean-up
 RUN apt-get -y clean && apt-get -y autoremove && rm -rf /var/lib/{cache,log}/ /tmp/* /var/tmp/*
 
-# Add scripts folder to container
+# Add scripts to container
+ADD save_chromatogram.r /usr/local/bin/save_chromatogram.r
 ADD show_chromatogram.r /usr/local/bin/show_chromatogram.r
-RUN chmod +x /usr/local/bin/show_chromatogram.r
+ADD test_output.r /usr/local/bin/test_output.r
+RUN chmod +x /usr/local/bin/*.r
+
+# Add testing to container
+ADD runTest1.sh /usr/local/bin/runTest1.sh
 
 # Define Entry point script
 #ENTRYPOINT [ "Rscript" ]
