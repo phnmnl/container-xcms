@@ -23,7 +23,7 @@ for(arg in args)
   }
   if(argCase=="ppm")
   {
-    ppm=as.character(value)
+    ppm=as.numeric(value)
   }
   if(argCase=="peakwidthLow")
   {
