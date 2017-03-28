@@ -36,7 +36,7 @@ preprocessingStepsTMP<-preprocessingSteps
 for(xs in xcmsSetSplit)
 {
   preprocessingSteps<-preprocessingStepsTMP
-  filename<-paste(savePath,"/",rownames(xs@phenoData),".rdata",sep="")
+  filename<-paste(output,"/",rownames(xs@phenoData),".rdata",sep="")
   xcmsSetObject<-xs
   preprocessingSteps<-c(preprocessingSteps,"Split")
   save(list = c("xcmsSetObject","preprocessingSteps","varNameForNextStep"),file = filename)
