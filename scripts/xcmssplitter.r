@@ -1,4 +1,5 @@
 #!/usr/bin/env Rscript
+
 options(stringAsfactors = FALSE, useFancyQuotes = FALSE)
 
 # Taking the command line arguments
