@@ -29,7 +29,7 @@ for(arg in args)
 if(is.na(previousEnv) | is.na(output)) stop("Both input and output need to be specified!\n")
 load(file = previousEnv)
 toBeSplit<-get(varNameForNextStep)
-if(class(toBeSplit!="xcmsSet"))stop("This tool only accepts xcmsSet object!")
+if(class(toBeSplit)!="xcmsSet")stop("This tool only accepts xcmsSet object!")
 
 
 xcmsSetSplit<-split(toBeSplit,c(1:length(toBeSplit@filepaths)))
