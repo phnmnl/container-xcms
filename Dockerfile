@@ -9,13 +9,13 @@ LABEL Description="XCMS: Framework for processing and visualization of chromatog
 
 # Install packages for compilation
 RUN apt-get -y update
-RUN apt-get -y --no-install-recommends install make gcc gfortran g++ libnetcdf-dev libxml2-dev
+RUN apt-get -y --no-install-recommends install make gcc gfortran g++ libnetcdf-dev libxml2-dev libblas-dev liblapack-dev
 
 # Install XCMS
 RUN R -e 'source("https://bioconductor.org/biocLite.R"); biocLite("xcms")'
 
 # De-install not needed packages
-RUN apt-get -y --purge --auto-remove remove make gcc gfortran g++ libxml2-dev
+RUN apt-get -y --purge --auto-remove remove make gcc gfortran g++ libxml2-dev libblas-dev liblapack-dev
 
 # Clean-up
 RUN apt-get -y clean && apt-get -y autoremove && rm -rf /var/lib/{cache,log}/ /tmp/* /var/tmp/*
