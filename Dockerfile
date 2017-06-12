@@ -15,7 +15,7 @@ RUN apt-get -y --no-install-recommends install make gcc gfortran g++ libnetcdf-d
 RUN R -e 'source("https://bioconductor.org/biocLite.R"); biocLite("xcms")'
 
 # De-install not needed packages
-RUN apt-get -y --purge --auto-remove remove make gcc gfortran g++ libblas-dev liblapack-dev && apt-get -y --purge remove libxml2-dev
+RUN apt-get -y --purge --auto-remove remove make gcc gfortran g++ libblas-dev liblapack-dev
 
 # Clean-up
 RUN apt-get -y clean && apt-get -y autoremove && rm -rf /var/lib/{cache,log}/ /tmp/* /var/tmp/*
