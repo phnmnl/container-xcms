@@ -56,7 +56,7 @@ massTracesXCMSSet<-xcmsSet(RawFiles,polarity = polarity,
         noise=noise)
 # get original name of mz file
 name.parts <- unlist(strsplit(gsub(".*name=\"", "", grep('<sourceFile ', readLines(RawFiles), value=T)[1]), c("\\.")))
-attributes(massTracesXCMSSet)$origin <- paste(name.parts[-length(name.parts)], collapse=".")
+attributes(attributes(massTracesXCMSSet)[[".processHistory"]][[1]])$origin <- paste(name.parts[-length(name.parts)], collapse=".")
 
 preprocessingSteps<-c("FindPeaks")
 varNameForNextStep<-as.character("massTracesXCMSSet")
