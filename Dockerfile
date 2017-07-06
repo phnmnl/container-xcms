@@ -2,10 +2,14 @@ FROM container-registry.phenomenal-h2020.eu/phnmnl/rbase:v3.4.1-1xenial0_cv0.2.1
 
 MAINTAINER PhenoMeNal-H2020 Project (phenomenal-h2020-users@googlegroups.com)
 
-LABEL software=xcms
-LABEL software.version=1.50.1
-LABEL version=0.4
+LABEL software="XCMS"
+LABEL software.version="1.52.0"
+LABEL version="0.5"
 LABEL Description="XCMS: Framework for processing and visualization of chromatographically separated and single-spectra mass spectral data."
+LABEL website="https://github.com/sneumann/xcms"
+LABEL documentation="https://github.com/phnmnl/container-xcms/blob/master/README.md"
+LABEL license="https://github.com/phnmnl/container-midcor/blob/master/License.txt"
+LABEL tags="Metabolomics"
 
 # Install packages for compilation
 RUN apt-get -y update && apt-get -y --no-install-recommends install make gcc gfortran g++ libnetcdf-dev libxml2-dev libblas-dev liblapack-dev && \
