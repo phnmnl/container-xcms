@@ -86,7 +86,14 @@ removePk<-c()
 for( i in seq_along(idx)){
   peak_select <- xcms::peaks(xset)[idx[[i]], ]
   peaks<-rep(NA,nrow(xset@phenoData))
-  peaks[peak_select[,"sample"]]<-peak_select[,"into"]
+if(class(peak_select)=="numeric")
+{
+ peaks[peak_select["sample"]]<-peak_select["into"]
+}else
+{
+peaks[peak_select[,"sample"]]<-peak_select[,"into"]
+}
+ 
   names(peaks)<-c(as.character(xset@phenoData[,1]))
 
   blankSamples<-peaks[names(peaks)==blank]
