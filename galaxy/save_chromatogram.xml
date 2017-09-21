@@ -11,9 +11,10 @@
 if [[ "\$(head -n 2 $infile | tail -n 1 | grep mzML)" != "" ]];
 then filename="\$(head -n 40 $infile | grep "sample id" | sed -e "s/\"\>.*//" | sed -e "s/.*name\=\"//")";
     xcmsfile="/tmp/\$filename.mzML";
-    cp $infile \$xcmsfile;
+    ln -s $infile \$xcmsfile;
     save_chromatogram.r \$xcmsfile $outfile 2>&1;
 else echo "Error! Input file is not mzML.";
+    exit 1;
 fi
   ]]></command>
   <inputs>
