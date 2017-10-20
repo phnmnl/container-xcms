@@ -90,7 +90,13 @@ removePk<-c()
 for( i in seq_along(idx)){
   peak_select <- xcms::peaks(xset)[idx[[i]], ]
   peaks<-rep(NA,nrow(xset@phenoData))
-  peaks[peak_select[,"sample"]]<-peak_select[,"into"]
+  if(class(peak_select)=="numeric")
+  {
+  	peaks[peak_select["sample"]]<-peak_select["into"]
+  }else if (class(peak_select)=="matrix")
+  {
+	peaks[peak_select[,"sample"]]<-peak_select[,"into"]
+  }
   names(peaks)<-c(as.character(xset@phenoData[,1]))
   co<-SpecificCorrelation(peaks[dilutionTrend],Corto)
   if(absolute)
