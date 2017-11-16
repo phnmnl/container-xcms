@@ -3,8 +3,8 @@ FROM container-registry.phenomenal-h2020.eu/phnmnl/rbase:dev_v3.4.2-2xenial2_cv0
 MAINTAINER PhenoMeNal-H2020 Project (phenomenal-h2020-users@googlegroups.com)
 
 LABEL software="XCMS"
-LABEL software.version="1.52.0"
-LABEL version="0.9"
+LABEL software.version="3.0.0"
+LABEL version="0.1"
 LABEL Description="XCMS: Framework for processing and visualization of chromatographically separated and single-spectra mass spectral data."
 LABEL website="https://github.com/sneumann/xcms"
 LABEL documentation="https://github.com/phnmnl/container-xcms/blob/master/README.md"
