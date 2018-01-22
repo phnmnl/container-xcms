@@ -89,8 +89,11 @@ name.parts <- unlist(strsplit(gsub(".*name=\"", "", grep('<sourceFile ', readLin
 attributes(attributes(massTracesXCMSSet)[[".processHistory"]][[1]])$origin <- paste(name.parts[-length(name.parts)], collapse=".")
 
 # set the original file name
+if(!is.na(realFileName))
+{
 realFileName<-gsub(pattern = "Galaxy.*-\\[|\\].*",replacement = "",x = realFileName)
 rownames(massTracesXCMSSet@phenoData)<-realFileName
+}
 
 # set phenotype if demanded
 if(!is.na(phenoDataColumn) && !is.na(phenoFile))
