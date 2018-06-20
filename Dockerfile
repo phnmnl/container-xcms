@@ -12,11 +12,11 @@ LABEL license="https://github.com/phnmnl/container-midcor/blob/master/License.tx
 LABEL tags="Metabolomics"
 
 # Install packages for compilation
-RUN apt-get -y update && apt-get -y --no-install-recommends install make gcc gfortran g++ libnetcdf-dev libxml2-dev libblas-dev liblapack-dev && \
+RUN apt-get -y update && apt-get -y --no-install-recommends install make gcc gfortran g++ libnetcdf-dev libxml2-dev libblas-dev liblapack-dev libssl-dev pkg-config git && \
     R -e 'source("https://bioconductor.org/biocLite.R"); biocLite(c("MSnbase","mzR","MassSpecWavelet","S4Vectors","BiocStyle","faahKO","msdata"))' && \
     R -e 'install.packages(c("lattice","RColorBrewer","plyr","RANN","multtest","knitr","ncdf4","rgl","microbenchmark","RUnit"), repos="https://mirrors.ebi.ac.uk/CRAN/")' && \
     R -e 'install.packages("devtools", repos="https://mirrors.ebi.ac.uk/CRAN/")' && \
-    R -e 'library(devtools); install_github(repo="sneumann/CAMERA", ref="d9baa6ca364f4dd197a9eedd361869cf0787dbc3")' && \
+    R -e 'library(devtools); install_github(repo="sneumann/xcms", ref="d9baa6ca364f4dd197a9eedd361869cf0787dbc3")' && \
     apt-get -y --purge --auto-remove remove make gcc gfortran g++ libblas-dev liblapack-dev && \
     apt-get -y clean && apt-get -y autoremove && rm -rf /var/lib/{cache,log}/ /tmp/* /var/tmp/*
 
@@ -26,3 +26,4 @@ RUN chmod +x /usr/local/bin/*.r
 
 # Add testing to container
 ADD runTest1.sh /usr/local/bin/runTest1.sh
+
