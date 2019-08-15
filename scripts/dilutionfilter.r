@@ -75,7 +75,7 @@ massTracesXCMSSet@phenoData[i]<-fileNameMap[fileNameMap[,1]==rownames(massTraces
 
 SpecificCorrelation<-function(x,d=c(1:length(x)))
 {
-  if(length(na.omit(x))<=2)return(data.frame(pvalue=1,cor=as.numeric(0)))
+  if(length(na.omit(x))<=2)return(data.frame(pvalue=1,cor=as.numeric(-1.1)))
   y<-d
   tmpToCor<-cbind(x,y)
   tmpToCor<-na.omit(tmpToCor)
